@@ -1,0 +1,12 @@
+{
+  "name": "amit-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "node server.js",
+    "preview": "cd frontend && npm run preview"
+  }
+}
