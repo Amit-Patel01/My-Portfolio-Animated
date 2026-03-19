@@ -9,11 +9,11 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: 'https://my-portfolio-animated.onrender.com',
         changeOrigin: true,
       },
       '/contact': {
-        target: 'http://localhost:3001',
+        target: 'https://my-portfolio-animated.onrender.com',
         changeOrigin: true,
       },
     },
