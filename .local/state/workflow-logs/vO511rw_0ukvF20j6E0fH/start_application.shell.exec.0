@@ -1,0 +1,369 @@
+
+> amit-portfolio@0.0.0 dev
+> vite
+
+[1G[0K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m458[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.31.80.34:[1m5000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/create-artifact/artifacts/expo/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/create-artifact/artifacts/mockup-sandbox/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/create-artifact/artifacts/slides/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/create-artifact/artifacts/react-vite/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/create-artifact/artifacts/video-js/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/create-artifact/artifacts/mockup-sandbox/files/index.html[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/create-artifact/artifacts/expo/files/server/templates/landing-page.html[22m
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/expo/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/mockup-sandbox/files/index.html[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/expo/files/server/templates/landing-page.html[22m
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/mockup-sandbox/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/react-vite/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/slides/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/video-js/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/slides/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/expo/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/index.html[22m
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/mockup-sandbox/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/video-js/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/react-vite/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/server/templates/landing-page.html[22m
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/expo/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/mockup-sandbox/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/react-vite/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/slides/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m4:20:45 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/video-js/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/expo/files/server/templates/landing-page.html[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:20:45 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-GPbVtlvHRXAKYY94yiM9Q/artifacts/mockup-sandbox/files/index.html[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:22:38 AM[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
+Re-optimizing dependencies because lockfile has changed
+[2m4:22:38 AM[22m [36m[1m[vite][22m[39m server restarted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:22:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Projects.jsx[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:24:40 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[2m4:24:42 AM[22m [36m[1m[vite][22m[39m [32m✨ new dependencies optimized: [33mreact-router-dom[32m[39m
+[2m4:24:42 AM[22m [36m[1m[vite][22m[39m [32m✨ optimized dependencies changed. reloading[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:25:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m4:25:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Projects.jsx, /src/index.css[22m

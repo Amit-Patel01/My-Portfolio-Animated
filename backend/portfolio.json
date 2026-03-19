@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "id": "p1",
+      "type": "project",
+      "title": "PhotoFrame Hub",
+      "description": "A creative photo frame web application that lets users customize and download personalized frames for their photos using HTML5 Canvas API.",
+      "image": "https://images.unsplash.com/photo-1551650975-87deedd944b3?w=800&auto=format&fit=crop",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Canvas API"
+      ],
+      "link": "https://photoframehub.github.io/Photoframe/",
+      "github": "",
+      "featured": true,
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "id": "p2",
+      "type": "project",
+      "title": "Auto Garage Website",
+      "description": "A full-featured auto garage service website with appointment booking, service listings, contact info, and a responsive design for all devices.",
+      "image": "https://images.unsplash.com/photo-1554214933-00e945f42bd9?w=800&auto=format&fit=crop",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "Bootstrap",
+        "Responsive"
+      ],
+      "link": "https://shreemahakaliautogarage.free.nf",
+      "github": "",
+      "featured": true,
+      "color": "from-emerald-500 to-teal-600"
+    }
+  ]
+}

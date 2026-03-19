@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  /* ── Glass surface ── */
+  .glass {
+    @apply bg-white/60 dark:bg-white/5
+           border border-white/50 dark:border-white/10
+           backdrop-blur-xl
+           shadow-[0_8px_32px_rgba(0,0,0,0.08)]
+           dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+           transition-all duration-300;
+  }
+
+  /* ── Floating Navbar ── */
+  .glass-navbar {
+    @apply fixed top-4 left-1/2 -translate-x-1/2 z-50
+           w-[94%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%]
+           rounded-2xl
+           backdrop-blur-2xl
+           bg-white/75 dark:bg-slate-950/70
+           border border-white/50 dark:border-white/10
+           shadow-[0_8px_40px_rgba(0,0,0,0.10)]
+           dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)]
+           transition-all duration-300;
+  }
+  .glass-navbar.scrolled {
+    @apply top-2
+           bg-white/90 dark:bg-slate-950/90
+           shadow-[0_12px_50px_rgba(99,102,241,0.20)];
+  }
+
+  /* ── Section wrapper ── */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32;
+  }
+
+  /* ── Gradient text ── */
+  .gradient-text {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-600;
+  }
+
+  /* ── Primary button ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white
+           bg-gradient-to-r from-indigo-500 to-violet-600
+           shadow-[0_4px_24px_rgba(99,102,241,0.45)]
+           hover:shadow-[0_6px_36px_rgba(99,102,241,0.65)]
+           hover:scale-[1.03] active:scale-[0.97]
+           transition-all duration-200;
+  }
+
+  /* ── Secondary button ── */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           text-slate-700 dark:text-slate-200
+           bg-white/80 dark:bg-white/10
+           border border-slate-200/80 dark:border-white/15
+           backdrop-blur-sm
+           hover:bg-white dark:hover:bg-white/15
+           hover:scale-[1.03] active:scale-[0.97]
+           transition-all duration-200;
+  }
+
+  /* ── Hero pill ── */
+  .pill {
+    @apply inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full
+           text-xs font-semibold tracking-wide
+           bg-indigo-50 dark:bg-indigo-500/10
+           text-indigo-600 dark:text-indigo-400
+           border border-indigo-200/60 dark:border-indigo-400/25;
+  }
+
+  /* ── Shimmer text ── */
+  .shimmer-text {
+    background: linear-gradient(90deg,#6366f1,#a78bfa,#ec4899,#6366f1);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .float       { animation: float 4s ease-in-out infinite; }
+  .pulse-glow  { animation: pulseGlow 3s ease-in-out infinite; }
+}
+
+/* ── Keyframes ── */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+  50%     { box-shadow: 0 0 50px rgba(99,102,241,0.65), 0 0 90px rgba(139,92,246,0.25); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.4); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(99,102,241,0.7); }
+
+::selection { background: rgba(99,102,241,0.25); }

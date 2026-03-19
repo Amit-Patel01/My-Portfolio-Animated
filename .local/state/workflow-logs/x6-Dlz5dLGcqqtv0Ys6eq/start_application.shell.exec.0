@@ -1,0 +1,204 @@
+
+> amit-portfolio@0.0.0 dev
+> vite
+
+[1G[0K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m231[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.31.101.2:[1m5000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:46:00 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] /home/runner/workspace/src/index.css:34:5: The `dark:bg-[#0b0d26]/72` class does not exist. If `dark:bg-[#0b0d26]/72` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36m/home/runner/workspace/src/index.css[39m:34:4
+[33m  32 |    /* ── Floating Navbar ── */
+  33 |    .glass-navbar {
+  34 |      @apply fixed top-4 left-1/2 -translate-x-1/2 z-50
+     |      ^
+  35 |             w-[94%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%]
+  36 |             rounded-2xl[39m
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m2:46:00 PM[22m [31m[1m[vite][22m[39m Pre-transform error: [postcss] /home/runner/workspace/src/index.css:34:5: The `dark:bg-[#0b0d26]/72` class does not exist. If `dark:bg-[#0b0d26]/72` is a custom class, make sure it is defined within a `@layer` directive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:46:10 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] /home/runner/workspace/src/index.css:34:5: The `dark:bg-[#0b0d26]/72` class does not exist. If `dark:bg-[#0b0d26]/72` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36m/home/runner/workspace/src/index.css[39m:34:4
+[33m  32 |    /* ── Floating Navbar ── */
+  33 |    .glass-navbar {
+  34 |      @apply fixed top-4 left-1/2 -translate-x-1/2 z-50
+     |      ^
+  35 |             w-[94%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%]
+  36 |             rounded-2xl[39m
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m2:46:58 PM[22m [31m[1m[vite][22m[39m Pre-transform error: [postcss] /home/runner/workspace/src/index.css:73:5: The `dark:bg-white/8` class does not exist. If `dark:bg-white/8` is a custom class, make sure it is defined within a `@layer` directive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:46:58 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] /home/runner/workspace/src/index.css:73:5: The `dark:bg-white/8` class does not exist. If `dark:bg-white/8` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36m/home/runner/workspace/src/index.css[39m:73:4
+[33m  71 |    /* ── Secondary button ── */
+  72 |    .btn-secondary {
+  73 |      @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+     |      ^
+  74 |             text-slate-700 dark:text-slate-200
+  75 |             bg-white/80 dark:bg-white/8[39m
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[33m[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+3  |  @tailwind utilities;
+4  |  
+5  |  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6  |  
+7  |  @layer base {[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:51:48 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Navbar.jsx, /src/index.css[22m
+[33m[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+3  |  @tailwind utilities;
+4  |  
+5  |  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6  |  
+7  |  @layer base {[39m
