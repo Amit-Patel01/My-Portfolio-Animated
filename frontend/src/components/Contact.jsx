@@ -39,7 +39,8 @@ const Contact = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch('/contact', {
+      const apiUrl = `${import.meta.env.VITE_API_URL || ''}/contact`
+      const res = await fetch(apiUrl, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(form),

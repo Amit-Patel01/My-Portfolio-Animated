@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const API = '/api/portfolio'
+const API = `${import.meta.env.VITE_API_URL || ''}/api/portfolio`
 
 export const usePortfolio = () => {
   const [items,   setItems]   = useState([])
