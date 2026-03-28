@@ -204,12 +204,13 @@ const ItemForm = ({ initial, onSave, onClose, saving }) => {
         animate={{ opacity: 1, scale: 1,    y: 0 }}
         exit={{    opacity: 0, scale: 0.94, y: 24 }}
         transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-        className="fixed inset-x-4 top-[3%] md:inset-auto md:left-1/2 md:-translate-x-1/2
-                   md:w-[580px] z-50 max-h-[94vh] overflow-y-auto rounded-3xl
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+      >
+        <div className="pointer-events-auto w-full max-w-[580px] max-h-[90vh] overflow-y-auto rounded-3xl
                    bg-white dark:bg-[#0f1022]
                    border border-slate-200 dark:border-white/10
                    shadow-[0_32px_80px_rgba(0,0,0,0.25)]"
-      >
+        >
         <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 dark:border-white/8">
           <h3 className="font-black text-lg text-slate-900 dark:text-white"
               style={{ fontFamily: 'Outfit, sans-serif' }}>
@@ -316,6 +317,7 @@ const ItemForm = ({ initial, onSave, onClose, saving }) => {
             }
           </button>
         </form>
+        </div>
       </motion.div>
     </>
   )
