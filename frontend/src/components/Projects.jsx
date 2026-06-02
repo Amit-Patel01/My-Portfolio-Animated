@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LayoutGrid, Code2, Award, Loader2 } from 'lucide-react'
+import { LayoutGrid, Code2, Award, Loader2, Scissors, Monitor } from 'lucide-react'
 import PortfolioCard from './PortfolioCard'
+import ProjectModal from './ProjectModal'
 import { usePortfolio } from '../hooks/usePortfolio'
 
 const TABS = [
@@ -10,9 +11,17 @@ const TABS = [
   { key: 'certificate', label: 'Certificates', icon: Award },
 ]
 
+const FILTER_TABS = [
+  { key: 'all', label: 'All', icon: LayoutGrid },
+  { key: 'editing', label: 'Editing', icon: Scissors },
+  { key: 'development', label: 'Development', icon: Monitor },
+]
+
 const Projects = () => {
   const { items, loading, error } = usePortfolio()
   const [activeTab, setActiveTab] = useState('all')
+  const [filterType, setFilterType] = useState('all')
+  const [selectedItem, setSelectedItem] = useState(null)
 
   const filtered = activeTab === 'all'
     ? items
@@ -48,8 +57,9 @@ const Projects = () => {
       </motion.div>
 
       {/* ── Filter tabs ── */}
-      <div className="flex justify-center mb-10">
-        <div className="flex items-center gap-1.5 p-1 rounded-2xl
+      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+        {/* Category tabs */}
+        <div className="flex items-center gap-1.5 p-1.5 rounded-2xl
                         bg-white/60 dark:bg-white/5
                         border border-white/60 dark:border-white/10
                         backdrop-blur-sm">
@@ -87,6 +97,39 @@ const Projects = () => {
             )
           })}
         </div>
+
+        {/* Type filter for projects */}
+        <div className="flex items-center gap-1.5 p-1.5 rounded-2xl
+                        bg-white/60 dark:bg-white/5
+                        border border-white/60 dark:border-white/10
+                        backdrop-blur-sm">
+          {FILTER_TABS.map(({ key, label, icon: Icon }) => {
+            const isActive = filterType === key
+            return (
+              <button
+                key={key}
+                onClick={() => setFilterType(key)}
+                className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold
+                            transition-colors duration-200
+                  ${isActive
+                    ? 'text-indigo-600 dark:text-indigo-400'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
+                  }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="filter-pill"
+                    className="absolute inset-0 rounded-xl bg-white dark:bg-white/10
+                               border border-indigo-100 dark:border-white/10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <Icon size={12} className="relative z-10" />
+                <span className="relative z-10">{label}</span>
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       {/* ── Loading ── */}
@@ -108,7 +151,7 @@ const Projects = () => {
       {!loading && !error && (
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeTab}
+            key={`${activeTab}-${filterType}`}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{    opacity: 0, y: -8 }}
@@ -117,7 +160,12 @@ const Projects = () => {
           >
             {filtered.length > 0
               ? filtered.map((item, i) => (
-                  <PortfolioCard key={item.id} item={item} index={i} />
+                  <PortfolioCard 
+                    key={item.id} 
+                    item={item} 
+                    index={i} 
+                    onPreview={setSelectedItem}
+                  />
                 ))
               : (
                 <div className="col-span-full py-20 text-center text-slate-500 dark:text-slate-600">
@@ -129,6 +177,13 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
       )}
+
+      {/* Project Modal */}
+      <ProjectModal 
+        item={selectedItem} 
+        isOpen={!!selectedItem} 
+        onClose={() => setSelectedItem(null)} 
+      />
     </section>
   )
 }

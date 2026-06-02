@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, Sparkles, Github, Linkedin } from 'lucide-react'
+import { ArrowRight, Download, Sparkles, Github, Linkedin, Play } from 'lucide-react'
 import { useTypewriter } from '../hooks/useTypewriter'
 
-const ROLES = ['Full Stack Developer', 'UI/UX Designer', 'PC Repair Expert', 'Video Editor']
+const ROLES = ['Video Editor', 'Photo Editor', 'Developer', 'Creative Professional']
 
 const TECH_TAGS = [
   { label: 'React',    color: 'from-cyan-400 to-blue-500',    deg: 0   },
@@ -32,8 +32,62 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="section-container min-h-screen flex items-center justify-center pt-24"
+      className="section-container min-h-screen flex items-center justify-center pt-24 relative overflow-hidden"
     >
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-violet-500/10" />
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/30 to-violet-500/30 blur-[100px]"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-violet-500/25 to-pink-500/25 blur-[80px]"
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-[60px]"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+          }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        />
+      </div>
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-indigo-400/40"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
+            }}
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.2, 0.6, 0.2],
+            }}
+            transition={{
+              duration: 3 + i * 0.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.3,
+            }}
+          />
+        ))}
+      </div>
       <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
         {/* ── LEFT ── */}

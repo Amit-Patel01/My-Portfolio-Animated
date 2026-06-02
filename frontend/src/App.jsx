@@ -1,18 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from './context/ThemeContext'
 
-import Navbar      from './components/Navbar'
-import Hero        from './components/Hero'
-import About       from './components/About'
-import Skills      from './components/Skills'
-import Services    from './components/Services'
-import Journey     from './components/Journey'
-import Projects    from './components/Projects'
-import Contact     from './components/Contact'
-import ScrollToTop from './components/ScrollToTop'
-import AdminPanel  from './pages/AdminPanel'
+import Navbar        from './components/Navbar'
+import Hero          from './components/Hero'
+import About         from './components/About'
+import Skills        from './components/Skills'
+import Services      from './components/Services'
+import Journey       from './components/Journey'
+import Projects      from './components/Projects'
+import VideoShowcase from './components/VideoShowcase'
+import Contact       from './components/Contact'
+import ScrollToTop   from './components/ScrollToTop'
+import Preloader     from './components/Preloader'
+import AdminPanel    from './pages/AdminPanel'
 
 /* ── Portfolio (main site) ── */
 const Portfolio = () => {
@@ -39,6 +41,7 @@ const Portfolio = () => {
         <Skills />
         <Services />
         <Journey />
+        <VideoShowcase />
         <Projects />
         <Contact />
         <ScrollToTop />
@@ -48,26 +51,34 @@ const Portfolio = () => {
 }
 
 /* ── Root App with Router ── */
-const App = () => (
-  <ThemeProvider>
-    <Routes>
-      <Route path="/"      element={<Portfolio />} />
-      <Route path="/admin" element={<AdminPanel />} />
-    </Routes>
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true)
 
-    <Toaster
-      position="top-right"
-      toastOptions={{
-        style: {
-          background:    'rgba(15,15,35,0.9)',
-          backdropFilter: 'blur(20px)',
-          border:        '1px solid rgba(255,255,255,0.1)',
-          color:         '#e2e8f0',
-          borderRadius:  '16px',
-        },
-      }}
-    />
-  </ThemeProvider>
-)
+  return (
+    <ThemeProvider>
+      <Preloader onComplete={() => setIsLoading(false)} />
+      
+      <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <Routes>
+          <Route path="/"      element={<Portfolio />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
+      </div>
+
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background:    'rgba(15,15,35,0.9)',
+            backdropFilter: 'blur(20px)',
+            border:        '1px solid rgba(255,255,255,0.1)',
+            color:         '#e2e8f0',
+            borderRadius:  '16px',
+          },
+        }}
+      />
+    </ThemeProvider>
+  )
+}
 
 export default App

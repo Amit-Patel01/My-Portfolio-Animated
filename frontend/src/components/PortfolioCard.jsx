@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Award, Trash2 } from 'lucide-react'
+import { ExternalLink, Github, Award, Trash2, Eye } from 'lucide-react'
 
-const PortfolioCard = ({ item, index, onDelete, isCustom }) => {
+const PortfolioCard = ({ item, index, onDelete, isCustom, onPreview }) => {
   const isProject = item.type === 'project'
 
   return (
@@ -13,19 +13,22 @@ const PortfolioCard = ({ item, index, onDelete, isCustom }) => {
       layout
     >
       <motion.div
-        whileHover={{ y: -8 }}
-        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-        className="glass rounded-3xl overflow-hidden group h-full flex flex-col
-                   hover:shadow-[0_24px_60px_rgba(99,102,241,0.18)]
-                   dark:hover:shadow-[0_24px_60px_rgba(99,102,241,0.25)]
+        whileHover={{ y: -10 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="glass rounded-3xl overflow-hidden group h-full flex flex-col cursor-pointer
+                   hover:shadow-[0_24px_60px_rgba(99,102,241,0.25)]
+                   dark:hover:shadow-[0_24px_60px_rgba(99,102,241,0.35)]
                    transition-shadow duration-300"
+        onClick={() => onPreview?.(item)}
       >
         {/* ── Image ── */}
-        <div className="relative h-48 overflow-hidden shrink-0">
-          <img
+        <div className="relative h-52 overflow-hidden shrink-0">
+          <motion.img
             src={item.image || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop'}
             alt={item.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover"
+            whileHover={{ scale: 1.12 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             onError={e => { e.target.src = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop' }}
           />
 
@@ -48,22 +51,20 @@ const PortfolioCard = ({ item, index, onDelete, isCustom }) => {
             </span>
           </div>
 
-          {/* Delete button for custom items */}
-          {isCustom && onDelete && (
-            <button
-              onClick={e => { e.preventDefault(); e.stopPropagation(); onDelete(item.id) }}
-              className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center
-                         rounded-lg bg-red-500/80 backdrop-blur-sm text-white
-                         opacity-0 group-hover:opacity-100 transition-opacity duration-200
-                         hover:bg-red-600"
-            >
-              <Trash2 size={12} />
-            </button>
-          )}
-
-          {/* Hover CTA */}
+          {/* Preview button */}
           <div className="absolute inset-0 flex items-center justify-center gap-2
                           opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={e => { e.stopPropagation(); onPreview?.(item) }}
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-white
+                         bg-white/25 backdrop-blur-md border border-white/35
+                         hover:bg-white/35 transition-colors duration-200 shadow-lg"
+            >
+              <Eye size={14} />
+              View Details
+            </motion.button>
             {item.link && item.link !== '#' && (
               <a
                 href={item.link}
@@ -78,21 +79,20 @@ const PortfolioCard = ({ item, index, onDelete, isCustom }) => {
                 {isProject ? 'Visit' : 'View Cert'}
               </a>
             )}
-            {item.github && (
-              <a
-                href={item.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={e => e.stopPropagation()}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white
-                           bg-white/20 backdrop-blur-md border border-white/30
-                           hover:bg-white/30 transition-colors duration-200"
-              >
-                <Github size={12} />
-                GitHub
-              </a>
-            )}
           </div>
+
+          {/* Delete button for custom items */}
+          {isCustom && onDelete && (
+            <button
+              onClick={e => { e.preventDefault(); e.stopPropagation(); onDelete(item.id) }}
+              className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center
+                         rounded-lg bg-red-500/80 backdrop-blur-sm text-white
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-200
+                         hover:bg-red-600 z-10"
+            >
+              <Trash2 size={12} />
+            </button>
+          )}
         </div>
 
         {/* ── Content ── */}

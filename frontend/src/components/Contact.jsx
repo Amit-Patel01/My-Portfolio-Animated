@@ -31,12 +31,46 @@ const INPUT_CLS = `w-full px-4 py-3.5 rounded-xl text-sm font-medium
 
 const Contact = () => {
   const [form,      setForm]      = useState({ name: '', email: '', message: '' })
+  const [errors,    setErrors]    = useState({})
+  const [touched,   setTouched]   = useState({})
   const [loading,   setLoading]   = useState(false)
+  const [success,   setSuccess]   = useState(false)
 
-  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
+  const validate = (data) => {
+    const errs = {}
+    if (!data.name.trim()) errs.name = 'Name is required'
+    else if (data.name.length < 2) errs.name = 'Name must be at least 2 characters'
+    
+    if (!data.email.trim()) errs.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errs.email = 'Invalid email format'
+    
+    if (!data.message.trim()) errs.message = 'Message is required'
+    else if (data.message.length < 10) errs.message = 'Message must be at least 10 characters'
+    
+    return errs
+  }
+
+  const handleChange = e => {
+    const newForm = { ...form, [e.target.name]: e.target.value }
+    setForm(newForm)
+    if (touched[e.target.name]) {
+      setErrors(validate(newForm))
+    }
+  }
+
+  const handleBlur = e => {
+    setTouched(t => ({ ...t, [e.target.name]: true }))
+    setErrors(validate(form))
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
+    const validationErrors = validate(form)
+    setErrors(validationErrors)
+    setTouched({ name: true, email: true, message: true })
+    
+    if (Object.keys(validationErrors).length > 0) return
+    
     setLoading(true)
     try {
       const apiUrl = `${import.meta.env.VITE_API_URL || ''}/contact`
@@ -46,8 +80,11 @@ const Contact = () => {
         body:    JSON.stringify(form),
       })
       if (res.ok) {
+        setSuccess(true)
         toast.success('Message sent! I\'ll get back to you soon.')
         setForm({ name: '', email: '', message: '' })
+        setTouched({})
+        setTimeout(() => setSuccess(false), 3000)
       } else {
         throw new Error()
       }
@@ -167,47 +204,106 @@ const Contact = () => {
                 style={{ fontFamily: 'Outfit, sans-serif' }}>
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <motion.form 
+              onSubmit={handleSubmit} 
+              className="space-y-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Success animation */}
+              {success && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30"
+                >
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                    Message sent successfully!
+                  </span>
+                </motion.div>
+              )}
+
               <div>
                 <label className="block text-xs font-semibold text-slate-500 dark:text-slate-500 mb-1.5 ml-1">
                   Your Name
                 </label>
-                <input
-                  name="name"
-                  placeholder="Amit Patel"
-                  value={form.name}
-                  onChange={handleChange}
-                  className={INPUT_CLS}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    name="name"
+                    placeholder="Amit Patel"
+                    value={form.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`${INPUT_CLS} ${errors.name && touched.name ? 'border-red-400 focus:ring-red-500/30 focus:border-red-400' : ''}`}
+                  />
+                  {errors.name && touched.name && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute -bottom-5 left-1 text-[10px] font-medium text-red-500"
+                    >
+                      {errors.name}
+                    </motion.p>
+                  )}
+                </div>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-slate-500 dark:text-slate-500 mb-1.5 ml-1">
                   Email Address
                 </label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  value={form.email}
-                  onChange={handleChange}
-                  className={INPUT_CLS}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={form.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`${INPUT_CLS} ${errors.email && touched.email ? 'border-red-400 focus:ring-red-500/30 focus:border-red-400' : ''}`}
+                  />
+                  {errors.email && touched.email && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute -bottom-5 left-1 text-[10px] font-medium text-red-500"
+                    >
+                      {errors.email}
+                    </motion.p>
+                  )}
+                </div>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-slate-500 dark:text-slate-500 mb-1.5 ml-1">
                   Message
                 </label>
-                <textarea
-                  name="message"
-                  placeholder="Tell me about your project or question…"
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className={`${INPUT_CLS} resize-none`}
-                  required
-                />
+                <div className="relative">
+                  <textarea
+                    name="message"
+                    placeholder="Tell me about your project or question…"
+                    value={form.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    rows={5}
+                    className={`${INPUT_CLS} resize-none ${errors.message && touched.message ? 'border-red-400 focus:ring-red-500/30 focus:border-red-400' : ''}`}
+                  />
+                  {errors.message && touched.message && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute -bottom-5 left-1 text-[10px] font-medium text-red-500"
+                    >
+                      {errors.message}
+                    </motion.p>
+                  )}
+                </div>
               </div>
               <motion.button
                 type="submit"
@@ -221,7 +317,7 @@ const Contact = () => {
                   : <><Send size={15} /> Send Message</>
                 }
               </motion.button>
-            </form>
+            </motion.form>
           </div>
         </motion.div>
 
